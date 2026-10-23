@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090b">
+<meta name="description" content="KyberŠtít — vzdělávací nástroj pro prevenci podvodů a bezpečnější reakci v krizových situacích.">
+<title>KyberŠtít — ochrana před podvody</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{color-scheme:dark;--bg:#09090b;--panel:#111116;--line:#27272a;--muted:#a1a1aa;--indigo:#818cf8;--purple:#c4b5fd;--red:#f87171;--amber:#fbbf24;--orange:#fb923c;--green:#34d399}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#24204a 0,transparent 42%),var(--bg);color:#f4f4f5;font:16px/1.6 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button,a,input{outline-offset:4px}a{color:#c7d2fe}.container{width:min(1152px,calc(100% - 32px));margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;border-bottom:1px solid #27272a}.brand{font-size:1.5rem;font-weight:850;letter-spacing:-.04em;color:#a5b4fc;text-decoration:none}.status{font-size:.82rem;color:#c4b5fd;display:flex;align-items:center;gap:9px}.dot{width:9px;height:9px;border-radius:50%;background:#818cf8;box-shadow:0 0 14px #818cf8;animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.45;box-shadow:0 0 4px #34d399}}.hero{text-align:center;padding:55px 0 30px}.eyebrow{display:inline-flex;border:1px solid #4338ca66;background:#312e811f;color:#c7d2fe;border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;letter-spacing:-.055em;margin:18px auto;max-width:850px}.gradient{background:linear-gradient(90deg,#a5b4fc,#c4b5fd,#f0abfc);color:transparent;background-clip:text}.hero p{max-width:780px;margin:0 auto;color:#a1a1aa;font-size:1.08rem}.section{margin:28px 0 42px}.section-head{margin-bottom:18px}.section-head h2{margin:0;font-size:1.45rem;letter-spacing:-.03em}.section-head p{margin:5px 0 0;color:#a1a1aa}.card{background:linear-gradient(145deg,#15151c,#101014);border:1px solid #27272a;border-radius:22px;padding:24px;box-shadow:0 16px 40px #00000020}.crisis{border-color:#7f1d1d80;background:radial-gradient(ellipse at top,#3b111b66,transparent 60%),#111116}.crisis-note{border:1px solid #7f1d1d;background:#450a0a55;color:#fecaca;border-radius:14px;padding:14px 16px;margin-bottom:18px}.crisis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.crisis-btn{min-height:142px;border:1px solid transparent;border-radius:17px;padding:18px;text-align:left;color:#fff;font-weight:800;font-size:1rem;line-height:1.35;transition:transform .2s,filter .2s,border-color .2s}.crisis-btn:hover{transform:translateY(-3px);filter:brightness(1.1)}.crisis-btn small{display:block;font-weight:500;opacity:.84;margin-top:10px}.red{background:linear-gradient(145deg,#991b1b,#7f1d1d);border-color:#ef444455}.amber{background:linear-gradient(145deg,#92400e,#78350f);border-color:#fbbf2455}.orange{background:linear-gradient(145deg,#9a3412,#7c2d12);border-color:#fb923c55}.fineprint{font-size:.82rem;color:#a1a1aa;margin:14px 0 0}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.quiz-top{display:flex;justify-content:space-between;gap:10px;align-items:center;color:#a1a1aa;font-size:.9rem}.progress{height:6px;border-radius:99px;background:#27272a;overflow:hidden;margin:12px 0 22px}.progress span{height:100%;display:block;width:0;background:linear-gradient(90deg,#818cf8,#c4b5fd);transition:width .25s}.question{font-size:1.12rem;font-weight:750;line-height:1.5;margin:0 0 18px}.answers{display:grid;gap:10px}.answer{display:flex;gap:12px;align-items:flex-start;text-align:left;background:#18181f;border:1px solid #3f3f46;color:#e4e4e7;padding:14px;border-radius:14px;transition:border-color .15s,background .15s;width:100%}.answer:hover:not(:disabled){border-color:#818cf8;background:#242338}.letter{display:grid;place-items:center;flex:0 0 28px;height:28px;border:1px solid #52525b;border-radius:8px;font-weight:800;color:#c4b5fd}.answer.correct{border-color:#059669;background:#064e3b66}.answer.wrong{border-color:#dc2626;background:#7f1d1d55}.answer:disabled{cursor:default}.feedback{padding:15px;border-radius:14px;margin-top:15px;border:1px solid #27272a;background:#18181f}.feedback.good{border-color:#059669;color:#a7f3d0}.feedback.bad{border-color:#dc2626;color:#fecaca}.btn{border:1px solid #4f46e5;background:linear-gradient(135deg,#4f46e5,#6d28d9);color:white;font-weight:750;border-radius:12px;padding:12px 17px;transition:filter .15s,transform .15s}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.btn.secondary{background:#18181f;border-color:#3f3f46;color:#e4e4e7}.btn.danger{background:#991b1b;border-color:#b91c1c}.btn:focus-visible,.answer:focus-visible,.crisis-btn:focus-visible{outline:3px solid #c4b5fd}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label{display:block;color:#d4d4d8;font-size:.88rem;font-weight:650;margin-bottom:6px}.field input{width:100%;padding:12px 13px;background:#09090b;border:1px solid #3f3f46;border-radius:11px;color:white}.field input:focus{border-color:#818cf8}.preview{white-space:pre-wrap;background:#09090b;border:1px solid #27272a;border-radius:13px;padding:16px;color:#d4d4d8;font-size:.9rem;margin:16px 0}.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.contact{border:1px solid #27272a;border-radius:15px;padding:17px;background:#141419}.contact h3{margin:0 0 7px;font-size:1rem}.contact p{margin:4px 0;color:#a1a1aa;font-size:.9rem}.contact a{word-break:break-word}.contact .official{font-size:.82rem}.premium{background:radial-gradient(ellipse at right top,#3730a355,transparent 55%),linear-gradient(145deg,#171528,#111116);border-color:#6366f155}.premium-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{border:1px solid #373044;background:#171622;border-radius:15px;padding:17px}.feature .icon{font-size:1.4rem}.feature h3{margin:7px 0 4px}.feature p{margin:0;color:#a1a1aa;font-size:.9rem}.footer{border-top:1px solid #27272a;margin-top:48px;padding:25px 0 35px;color:#a1a1aa;font-size:.84rem}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#064e3b;border:1px solid #059669;color:#d1fae5;padding:13px 18px;border-radius:14px;box-shadow:0 15px 40px #0008;max-width:calc(100% - 28px);z-index:100;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.emergency-view{position:fixed;inset:0;z-index:50;overflow:auto;background:radial-gradient(ellipse at top,#3b1019,#09090b 65%);padding:24px 0 40px}.emergency-inner{width:min(880px,calc(100% - 28px));margin:auto}.emergency-title{font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.15;letter-spacing:-.04em;margin:10px 0 18px}.timer{font-variant-numeric:tabular-nums;font-size:clamp(4.5rem,14vw,8rem);font-weight:900;line-height:1;color:#fca5a5;letter-spacing:-.07em;text-shadow:0 0 35px #ef444455;text-align:center;margin:20px 0}.timer-label{text-align:center;color:#fecaca;font-weight:800;letter-spacing:.12em}.shock-warning{background:#450a0a88;border:1px solid #b91c1c;border-radius:16px;padding:18px;color:#fee2e2}.scenario-box{border:1px solid #52525b;background:#18181f;border-radius:18px;padding:22px;margin:18px 0}.scenario-box h3{font-size:1.2rem;font-weight:850;margin:0 0 12px}.scenario-box p{margin:10px 0}.scenario-box ul{padding-left:1.25rem;margin:12px 0}.scenario-box li{margin:12px 0}.scenario-box .question-callout{background:#312e81aa;border:1px solid #6366f1;border-radius:13px;padding:14px;color:#e0e7ff}.hidden{display:none!important}.result-card{background:#064e3b55;border:1px solid #059669;border-radius:16px;padding:20px;margin-top:18px}.muted{color:#a1a1aa}.tag{display:inline-block;border:1px solid #3f3f46;border-radius:999px;padding:3px 9px;color:#d4d4d8;font-size:.78rem}.mini-note{font-size:.83rem;color:#a1a1aa;margin-top:12px}@media(max-width:760px){.crisis-grid,.premium-grid{grid-template-columns:1fr}.crisis-btn{min-height:105px}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.card{padding:18px}.hero{padding:38px 0 22px}.topbar{align-items:flex-start;flex-direction:column}.status{font-size:.78rem}.section{margin:24px 0 34px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="dashboard">
+  <div class="container">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="KyberŠtít — hlavní stránka">👁️ KyberŠtít</a>
+      <div class="status"><span class="dot" aria-hidden="true"></span><span>Vzdělávací prototyp · bez automatického monitoringu</span></div>
+    </header>
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Digitální bezpečí vaší rodiny</span>
+        <h1>Inteligentní štít proti podvodům <span class="gradient">KyberŠtít</span></h1>
+        <p>Okamžitá krizová a preventivní obrana vaší rodiny před falešnými bankéři, podvodnými investicemi a phishing SMS.</p>
+      </section>
+
+      <section class="section" id="krizova-zona">
+        <div class="section-head"><h2>🚨 Krizová zóna</h2><p>Pokud na vás někdo tlačí, zastavte se. Nemusíte jednat okamžitě.</p></div>
+        <div class="card crisis">
+          <div class="crisis-note"><strong>Právě jste pod tlakem?</strong> Nesdělujte hesla, PINy ani jednorázové kódy. Neposílejte peníze a neinstalujte programy na pokyn volajícího. Pokud je to bezpečné, hovor ukončete a ověřte situaci přes oficiální kontakt.</div>
+          <div class="crisis-grid">
+            <button class="crisis-btn red" data-scenario="bank">🚨 VOLÁ MI BANKA / POLICIE <small>Účet je údajně v ohrožení</small></button>
+            <button class="crisis-btn amber" data-scenario="cash">🪙 NĚKDO CHCE, ABYCH JEL K BANKOMATU / VYBRAL PENÍZE <small>Hotovost, Bitcoinmat nebo „bezpečný účet“</small></button>
+            <button class="crisis-btn orange" data-scenario="investment">📈 VOLÁ MI INVESTIČNÍ PORADCE <small>Nabídka akcií, Agrofertu, ČEZ nebo kryptoměn</small></button>
+          </div>
+          <p class="fineprint">KyberŠtít je vzdělávací nástroj, nikoli automatická detekce podvodu ani náhrada policie či banky. Pokud hrozí bezprostřední nebezpečí, volejte 158 nebo 112.</p>
+        </div>
+      </section>
+
+      <section class="section" id="kviz">
+        <div class="section-head"><h2>🧠 NENALÉTEJTE PODVODNÍKŮM</h2><p>Pět situací, ve kterých může rozhodnout klidná a ověřená reakce.</p></div>
+        <div class="card">
+          <div id="quiz-area">
+            <div class="quiz-top"><span id="quiz-progress-label">Otázka 1 z 5</span><span id="quiz-score">Správně: 0</span></div>
+            <div class="progress" aria-label="Postup kvízem"><span id="quiz-progress"></span></div>
+            <h3 class="question" id="question-text"></h3>
+            <div class="answers" id="answers"></div>
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+            <div class="mt-5 flex flex-wrap gap-3"><button class="btn hidden" id="next-question">Další otázka →</button><button class="btn secondary hidden" id="restart-quiz">Zopakovat kvíz</button></div>
+          </div>
+          <div id="quiz-results" class="hidden" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="hlaseni">
+        <div class="section-head"><h2>📝 Generátor hlášení pro Policii a Banku</h2><p>Bez ukládání dat — text se sestaví ve vašem prohlížeči.</p></div>
+        <div class="card">
+          <div class="form-grid">
+            <div class="field"><label for="phone">Telefonní číslo útočníka</label><input id="phone" type="tel" placeholder="Např. +420 777 000 000" autocomplete="off"></div>
+            <div class="field"><label for="institution">Za jakou instituci se vydával</label><input id="institution" type="text" placeholder="Např. banka nebo policie" autocomplete="off"></div>
+            <div class="field"><label for="incident-time">Čas incidentu</label><input id="incident-time" type="text" placeholder="Např. dnes kolem 14:30" autocomplete="off"></div>
+          </div>
+          <div class="preview" id="report-preview" aria-live="polite"></div>
+          <div class="flex flex-wrap gap-3"><button class="btn" id="copy-report">📋 Zkopírovat oficiální text hlášení</button><button class="btn secondary" id="clear-report">Vymazat formulář</button></div>
+          <p class="fineprint">Jde o návrh oznámení, nikoli právně ověřený formulář. Před odesláním doplňte pouze informace, které bezpečně znáte. Pokud kopírování nefunguje, text lze ručně označit a zkopírovat.</p>
+        </div>
+      </section>
+
+      <section class="section" id="kontakty">
+        <div class="section-head"><h2>☎️ Kontakty bank a pomoci</h2><p>Před sdílením citlivých údajů si kontakt ověřte na oficiálním webu instituce.</p></div>
+        <div class="contact-grid">
+          <article class="contact"><h3>Česká spořitelna</h3><p>Klientská linka: <a href="tel:+420277207207">+420 277 207 207</a></p><p class="official"><a href="https://www.csas.cz/cs/kontaktni-cisla-adresy" target="_blank" rel="noopener noreferrer">Oficiální kontakty banky ↗</a></p></article>
+          <article class="contact"><h3>Komerční banka</h3><p class="official">Telefonní číslo ověřte na oficiálním webu banky nebo v aplikaci.</p><p class="official"><a href="https://www.kb.cz/" target="_blank" rel="noopener noreferrer">Oficiální web KB ↗</a></p></article>
+          <article class="contact"><h3>ČSOB</h3><p>Bezpečnostní linka: <a href="tel:+420495800111">+420 495 800 111</a></p><p class="official"><a href="https://www.csob.cz/Kontakty" target="_blank" rel="noopener noreferrer">Oficiální kontakty banky ↗</a></p></article>
+          <article class="contact"><h3>Air Bank</h3><p class="official">Aktuální telefon si ověřte přímo na oficiálním webu nebo v aplikaci.</p><p class="official"><a href="https://www.airbank.cz/" target="_blank" rel="noopener noreferrer">Oficiální web Air Bank ↗</a></p></article>
+          <article class="contact"><h3>Policie České republiky</h3><p>Tísňová linka: <a href="tel:158">158</a> (bezprostřední ohrožení)</p><p>Jednotná evropská tísňová linka: <a href="tel:112">112</a></p><p class="official"><a href="https://policie.gov.cz/kyberkriminalita/pomoc-v-nouzi-4" target="_blank" rel="noopener noreferrer">Oficiální návod: Pomoc v nouzi ↗</a></p></article>
+          <article class="contact"><h3>Bezpečný postup</h3><p>Neklikejte na odkazy z podezřelých zpráv a nevolejte zpět na číslo, které vám nadiktoval volající.</p><p class="official">Kontakt vyhledejte sami přes oficiální aplikaci nebo web. Pokud už odešly peníze, ihned kontaktujte svou banku.</p></article>
+        </div>
+        <p class="fineprint">Kontakty a odkazy byly kontrolovány podle oficiálních webů dne 23. 10. 2026. Před použitím si údaje znovu ověřte přímo u instituce; čísla a postupy se mohou měnit. Nikdy nesdělujte hesla, PINy ani jednorázové potvrzovací kódy.</p>
+      </section>
+
+      <section class="section" id="premium">
+        <div class="section-head"><h2>🔒 Chystané prémiové funkce (Rodinný a Firemní Štít)</h2><p>Náhled budoucích možností — v tomto prototypu nejsou placené služby aktivní.</p></div>
+        <div class="card premium">
+          <div class="premium-grid">
+            <article class="feature"><div class="icon">👨‍👩‍👧‍👦</div><h3>Rodinný Štít</h3><p>Ověřené nouzové kontakty, snadno dostupné krizové pokyny a případná upozornění rodině.</p><span class="tag mt-3">Připravuje se</span></article>
+            <article class="feature"><div class="icon">🏢</div><h3>Firemní Štít</h3><p>Edukační materiály pro zaměstnance, modelové situace a doporučené postupy pro incidenty.</p><span class="tag mt-3">Připravuje se</span></article>
+            <article class="feature"><div class="icon">📨</div><h3>Nouzová SMS</h3><p>Plánované upozornění předem zvolených kontaktů přes bezpečně provozované SMS rozhraní.</p><span class="tag mt-3">Vyžaduje backend</span></article>
+          </div>
+          <div class="mt-5 rounded-xl border border-indigo-400/30 bg-indigo-950/30 p-4">
+            <h3 class="font-bold text-lg">Podpořte bezpečnější internet</h3>
+            <p class="text-zinc-300 mt-1">Tento prototyp nepřijímá platby ani dary a neobsahuje platební odkaz. Nezadávejte platební údaje do neověřených formulářů.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><p><strong class="text-zinc-300">👁️ KyberŠtít</strong> — vzdělávací prototyp pro prevenci podvodů.</p><p>Stránka automaticky nevyhodnocuje telefonní čísla, odkazy, hlas ani obsah zpráv. Nic z formuláře se na tomto prototypu neposílá na server; text hlášení se sestavuje v prohlížeči. Nenahrazuje odbornou pomoc ani oficiální kontakty institucí.</p><p>© <span id="year"></span> KyberŠtít · Chraňte své údaje, ověřujte nezávisle.</p><p>Provozní poznámka: prototyp nemá backend, automatická upozornění ani aktivní placené funkce. Styly se načítají přes Tailwind CDN, takže vzhled vyžaduje internetové připojení.</p></footer>
+  </div>
+</div>
+
+<section id="emergency-view" class="emergency-view hidden" role="dialog" aria-modal="true" aria-labelledby="emergency-title">
+  <div class="emergency-inner">
+    <div class="flex items-center justify-between gap-4 border-b border-red-900/70 pb-4">
+      <div class="text-lg font-extrabold text-red-200">👁️ KyberŠtít <span class="text-zinc-500">/ krizový režim</span></div>
+      <span class="tag">Bezpečnostní pokyny</span>
+    </div>
+    <div class="shock-warning mt-5"><strong>STOP!</strong> Nenechte se tlačit k okamžité platbě, výběru hotovosti ani sdílení přístupových údajů. Zhluboka se nadechněte. Nemusíte čekat na doběhnutí počítadla — hovor můžete ukončit hned a situaci ověřit přes oficiální kontakt.</div>
+    <div class="timer-label mt-5">ZASTAVTE SE A OVĚŘTE SITUACI</div>
+    <div class="timer" id="countdown" aria-live="off">60s</div>
+    <p class="text-center text-zinc-400 text-sm">Odpočet je jen pomůcka ke zklidnění, ne pokyn zůstávat na telefonu. Můžete zavěsit hned.</p>
+    <div id="scenario-content" class="scenario-box"></div>
+    <div class="flex flex-wrap gap-3">
+      <button class="btn danger" id="back-home">⬅️ Zpět na hlavní menu</button>
+      <a class="btn secondary no-underline" href="tel:158">Zavolat Policii ČR · 158</a>
+    </div>
+    <p class="fineprint mt-4">Pokud jste už předali přístupové údaje nebo peníze, kontaktujte banku přes její oficiální kanál co nejdříve. V bezprostředním ohrožení volejte 158 nebo 112.</p>
+  </div>
+</section>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+const scenarios = {
+ bank: {
+  title:"⚠️ VAROVNÉ INDICIE (Všímejte si v telefonu):",
+  html:`<div class="question-callout"><strong>Bezpečnější ověření:</strong> Nespoléhejte na to, že volající zná osobní údaje nebo že se zobrazuje oficiální číslo. Hovor ukončete a zavolejte na číslo z oficiálního webu či aplikace banky. Nikomu nesdělujte hesla ani potvrzovací kódy.</div>
+  <ul><li>❌ <strong>NÁTLAK NA MLČENLIVOST:</strong> Nutí vás volající, abyste o hovoru nikomu neříkali (ani rodině, ani lidem na pobočce), protože jde o „tajnou policejní akci“?</li><li>❌ <strong>PŘEPOJOVÁNÍ:</strong> Neustále vás přepojují na jiné „specialisty“ (např. z vaší banky na údajného specialistu z České národní banky)?</li><li>🛑 <strong>Pamatujte:</strong> Skutečná banka po vás nikdy nebude chtít nadiktovat přihlašovací údaje nebo potvrzovací kódy z SMS. Pokud po vás chtějí převod peněz, zavěste a ověřte si situaci nezávisle.</li></ul>
+  <p class="text-sm text-zinc-400">Nedoporučujeme vyzývat volajícího k potvrzování údajů o vašich platbách ani schvalovat nevyžádané notifikace. Údaje o transakcích nejsou spolehlivý důkaz identity.</p>`
+ },
+ cash: {
+  title:"🚨 OKAMŽITĚ HOVOR UKONČETE A NIKAM NEJEZDETE!",
+  html:`<p>Skutečná banka ani Policie ČR vás nebudou nutit vybrat hotovost, jet k bankomatu, vkládat peníze do cizích automatů nebo je posílat na „bezpečné“ či „rezervační“ účty.</p><p>Útočník vás může držet na telefonu a navigovat přes mapy, abyste neměli čas přemýšlet. <strong>Neposílejte peníze a nikam nejezděte podle jeho pokynů. Zavěste.</strong></p><div class="question-callout">Zavolejte své bance na číslo z její oficiální aplikace nebo webu a řekněte důvěryhodné osobě, co se děje. Pokud jste už peníze odeslali, kontaktujte banku ihned.</div>`
+ },
+ investment: {
+  title:"⚠️ PSYCHOLOGICKÝ ŠTÍT PROTI FALEŠNÝM INVESTICÍM:",
+  html:`<p>Neexistuje žádný zaručený vysoký zisk z investic či akcií bez rizika. Nevyžádaný telefonát, nátlak na rychlé rozhodnutí a sliby jistého výdělku jsou varovné signály.</p><div class="question-callout"><strong>Co můžete říct:</strong> „Děkuji, nic po telefonu nepotvrdím. Společnost si ověřím samostatně v oficiálním registru České národní banky (ČNB).“ Potom hovor ukončete a registr vyhledejte sami na <a href="https://www.cnb.cz/" target="_blank" rel="noopener noreferrer">oficiálním webu ČNB</a>. Samotné IČO nebo název firmy není důkaz, že volající opravdu zastupuje danou společnost.</div>
+  <ul><li>❌ <strong>INSTALACE PROGRAMŮ:</strong> Nutí vás „poradce“, abyste si do mobilu nebo počítače nainstalovali AnyDesk, TeamViewer či RustDesk? Neinstalujte je na jeho pokyn, nesdílejte obrazovku a nepovolujte vzdálený přístup. Pokud jste přístup povolili, odpojte zařízení a bezpečně kontaktujte banku.</li><li>❌ <strong>NEOBVYKLÁ KOMUNIKACE:</strong> Chyby v češtině mohou být varovným signálem, ale samy o sobě nedokazují podvod ani původ volajícího. Důležitější jsou nátlak, žádost o peníze a nemožnost nezávislého ověření.</li></ul>`
+ }
+};
+let timerId = null, secondsLeft = 60;
+const dashboard = document.getElementById("dashboard");
+const emergencyView = document.getElementById("emergency-view");
+const countdown = document.getElementById("countdown");
+function stopTimer(){if(timerId!==null){clearInterval(timerId);timerId=null;}}
+function startScenario(key){
+ stopTimer(); secondsLeft=60; countdown.textContent="60s";
+ const s=scenarios[key]; if(!s)return;
+ document.getElementById("scenario-content").innerHTML=`<h3 id="emergency-title">${s.title}</h3>${s.html}`;
+ dashboard.classList.add("hidden"); emergencyView.classList.remove("hidden");
+ document.body.style.overflow="hidden";
+ timerId=setInterval(()=>{secondsLeft=Math.max(0,secondsLeft-1);countdown.textContent=secondsLeft+"s";if(secondsLeft<=0)stopTimer();},1000);
+ document.getElementById("back-home").focus();
+}
+function closeScenario(){stopTimer();emergencyView.classList.add("hidden");dashboard.classList.remove("hidden");document.body.style.overflow="";secondsLeft=60;countdown.textContent="60s";document.querySelector('[data-scenario="bank"]').focus();}
+document.querySelectorAll("[data-scenario]").forEach(b=>b.addEventListener("click",()=>startScenario(b.dataset.scenario)));
+document.getElementById("back-home").addEventListener("click",closeScenario);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!emergencyView.classList.contains("hidden"))closeScenario();});
+window.addEventListener("pagehide",stopTimer);
+
+const questions=[
+ {q:"Volá vám bezpečnostní pracovník vaší banky a na displeji telefonu vidíte přesně to samé oficiální číslo, které má vaše banka na infolince. Tvrdí, že váš účet je napaden. Co uděláte?",a:[
+  ["Věřím mu. Číslo na displeji přece nejde zfalšovat, takže to musí být skutečná banka.","Chyba! Útočníci mohou podvrhnout číslo volajícího (Caller ID spoofing). Samotné číslo na displeji nepotvrzuje identitu.",false],
+  ["Okamžitě zavěsím. Číslo na displeji může být podvrh. Sám ručně vyhledám a zavolám na oficiální číslo banky.","Správně! Číslo volajícího lze podvrhnout. Zavěste a zavolejte sami na kontakt z oficiální aplikace nebo webu banky.",true],
+  ["Pokračuji v hovoru, ale pro jistotu mu nadiktuji jen heslo, PIN mu neřeknu.","Chyba! Bance ani policii nesdělujte hesla, PINy ani jednorázové potvrzovací kódy.",false]
+ ]},
+ {q:"Přijde vám SMS zpráva: „Česká pošta: Váš balíček nemohl být doručen kvůli chybějícímu číslu domu. Pro doručení klikněte na odkaz a zaplaťte poplatek 45 Kč.“ Očekává se zrovna balíček. Co uděláte?",a:[
+  ["Kliknu a zaplatím to. Jde jen o 45 Kč, to mě nezruinuje.","Chyba! Podvodná stránka může chtít údaje k platební kartě nebo přihlašovací údaje, nejen malý poplatek.",false],
+  ["Kliknu na odkaz, ale schválně zadám falešné údaje karty, abych to zkusil.","Chyba! Na podezřelý odkaz neklikejte ani kvůli testu. Otevřete oficiální aplikaci nebo web ručně.",false],
+  ["Na odkaz neklikám. Zkontroluji zásilku v oficiální aplikaci nebo na webu dopravce.","Správně! Nečekaná výzva k doplatku může být phishing. Stav zásilky ověřte nezávisle přes oficiální kanál.",true]
+ ]},
+ {q:"Volá vám váš vnuk/syn z neznámého čísla. Slyšíte jeho naprosto reálný hlas, brečí a říká, že měl autonehodu a potřebuje nutně poslat 50 000 Kč na kauci, jinak ho zavřou. Co uděláte?",a:[
+  ["Okamžitě posílám peníze na zadaný účet, abych mu pomohl.","Chyba! Hlas může být napodobený a naléhavý příběh má vyvolat paniku. Neodesílejte peníze bez nezávislého ověření.",false],
+  ["Zavěsím a okamžitě zavolám svému vnukovi/synovi na jeho skutečné, uložené telefonní číslo.","Správně! Ověřte situaci přes známé číslo nebo jiného důvěryhodného člena rodiny. Nenechte se tlačit do rychlé platby.",true],
+  ["Peníze nepošlu, ale řeknu mu, ať si pro ně přijede osobně.","Chyba! Nevyjednávejte podle pokynů neověřeného volajícího. Ukončete hovor a situaci ověřte nezávisle.",false]
+ ]},
+ {q:"Volá vám policista, zná vaše jméno i rodné číslo. Tvrdí, že vaše banka je vyšetřována a peníze nejsou v bezpečí. Přikazuje vám okamžitě vybrat hotovost a vložit ji do „bezpečnostního fondu“ přes Bitcoinmat. Co uděláte?",a:[
+  ["Udělám to. Policie mě přece nechce okrást a navíc znají mé rodné číslo.","Chyba! Osobní údaje mohou uniknout nebo být získány z různých zdrojů. Jejich znalost nepotvrzuje identitu volajícího.",false],
+  ["Nikam nejdu. Policie ani banka mě nemají nutit vybírat hotovost a vkládat ji do automatů.","Správně! Neodesílejte ani nevkládejte peníze podle pokynů volajícího. Zavěste a ověřte situaci přes oficiální kontakty.",true],
+  ["Vyberu peníze, ale nenechám je v automatu, schovám si je doma pod polštář.","Chyba! I výběr hotovosti pod nátlakem může být součástí podvodu. Zastavte se a ověřte vše nezávisle.",false]
+ ]},
+ {q:"Vyhledáte na internetu přihlášení do své banky. Kliknete na první odkaz, stránka vypadá naprosto identicky, barvy i loga sedí. Co musíte bezpodmínečně zkontrolovat?",a:[
+  ["Nic, pokud je na stránce logo mé banky, je to bezpečné.","Chyba! Logo, barvy i vzhled lze zkopírovat. Samy o sobě nejsou důkazem pravosti.",false],
+  ["To, zda se mi stránka načetla dostatečně rychle.","Chyba! Rychlost načítání neříká, zda je stránka bezpečná.",false],
+  ["Řádek s webovou adresou (URL) nahoře v prohlížeči, zda přesně odpovídá oficiální doméně banky.","Správně! Pečlivě kontrolujte celou doménu. Nejbezpečnější je použít oficiální aplikaci nebo adresu, kterou jste zadali sami.",true]
+ ]}
+];
+let qIndex=0, score=0, answered=false, picked=[];
+const qText=document.getElementById("question-text"), answersEl=document.getElementById("answers"), feedbackEl=document.getElementById("feedback");
+function renderQuestion(){
+ answered=false;const q=questions[qIndex];
+ document.getElementById("quiz-area").classList.remove("hidden");document.getElementById("quiz-results").classList.add("hidden");
+ document.getElementById("quiz-progress-label").textContent=`Otázka ${qIndex+1} z ${questions.length}`;
+ document.getElementById("quiz-score").textContent=`Správně: ${score}`;
+ document.getElementById("quiz-progress").style.width=`${qIndex/questions.length*100}%`;
+ qText.textContent=q.q;answersEl.innerHTML="";feedbackEl.className="feedback hidden";feedbackEl.textContent="";
+ document.getElementById("next-question").classList.add("hidden");document.getElementById("restart-quiz").classList.add("hidden");
+ q.a.forEach((a,i)=>{const b=document.createElement("button");b.type="button";b.className="answer";b.innerHTML=`<span class="letter">${"ABC"[i]}</span><span></span>`;b.lastElementChild.textContent=a[0];b.addEventListener("click",()=>chooseAnswer(i));answersEl.appendChild(b);});
+}
+function chooseAnswer(i){
+ if(answered)return;answered=true;const q=questions[qIndex],right=q.a[i][2];if(right)score++;picked.push({question:qIndex,choice:i,correct:right});
+ [...answersEl.children].forEach((b,j)=>{b.disabled=true;if(q.a[j][2])b.classList.add("correct");if(j===i&&!right)b.classList.add("wrong");});
+ feedbackEl.className="feedback "+(right?"good":"bad");feedbackEl.textContent=q.a[i][1];feedbackEl.classList.remove("hidden");
+ document.getElementById("quiz-score").textContent=`Správně: ${score}`;document.getElementById("quiz-progress").style.width=`${(qIndex+1)/questions.length*100}%`;
+ if(qIndex<questions.length-1){document.getElementById("next-question").textContent="Další otázka →";document.getElementById("next-question").classList.remove("hidden");}
+ else{document.getElementById("next-question").classList.add("hidden");showResults();}
+}
+function showResults(){
+ const res=document.getElementById("quiz-results");res.classList.remove("hidden");
+ const percent=Math.round(score/questions.length*100);
+ res.innerHTML=`<div class="result-card"><div class="text-sm uppercase tracking-widest text-emerald-200 font-bold">Kvíz dokončen</div><h3 class="text-3xl font-black mt-2">Vaše skóre: ${score} z ${questions.length}</h3><p class="mt-2 text-emerald-100">${percent===100?"Výborně! Zvládli jste všechny modelové situace.":percent>=60?"Dobrý základ. Projděte si vysvětlení a zopakujte si otázky, u kterých jste chybovali.":"Nevadí — účelem je učit se bezpečně reagovat. Projděte si krizové pokyny a zkuste kvíz znovu."}</p><div class="mt-4 space-y-2">${picked.map((p,n)=>`<div class="rounded-lg border border-emerald-900/70 bg-black/20 p-3"><strong>${n+1}. ${p.correct?"✓ Správně":"↻ K zopakování"}</strong><p class="text-sm text-emerald-100/80">${questions[p.question].q}</p></div>`).join("")}</div><button class="btn mt-5" id="result-restart">Zopakovat kvíz</button></div>`;
+ document.getElementById("result-restart").addEventListener("click",restartQuiz);
+ document.getElementById("quiz-area").classList.add("hidden");
+}
+function restartQuiz(){qIndex=0;score=0;picked=[];renderQuestion();}
+document.getElementById("next-question").addEventListener("click",()=>{if(!answered)return;qIndex++;renderQuestion();});
+document.getElementById("restart-quiz").addEventListener("click",restartQuiz);
+renderQuestion();
+
+const phoneInput=document.getElementById("phone"), institutionInput=document.getElementById("institution"), timeInput=document.getElementById("incident-time");
+const reportPreview=document.getElementById("report-preview");
+function safeValue(el, fallback){return el.value.trim()||fallback;}
+function reportText(){return `Předmět: Oznámení podezření na pokus o podvod\n\nDobrý den,\n\nrád/a bych oznámil/a podezření na pokus o podvod. Volající se vydával za: ${safeValue(institutionInput,"neuvedenou instituci")}.\nTelefonní číslo volajícího: ${safeValue(phoneInput,"nezjištěno")}.\nČas incidentu: ${safeValue(timeInput,"neuvedeno")}.\n\nPopis situace: Volající ve mně vyvolával podezření na podvod. Prosím o prověření a doporučení dalšího bezpečného postupu. Případné další důkazy předám bezpečným způsobem.\n\nDalší okolnosti: [doplňte pouze to, co se skutečně stalo].\n\nS pozdravem\n[Vaše jméno]`;}
+function updatePreview(){reportPreview.textContent=reportText();}
+[phoneInput,institutionInput,timeInput].forEach(el=>el.addEventListener("input",updatePreview));updatePreview();
+let toastTimer=null;
+function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),4200);}
+document.getElementById("copy-report").addEventListener("click",async()=>{
+ const text=reportText();
+ try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);}else{const ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();const ok=document.execCommand("copy");ta.remove();if(!ok)throw new Error("Kopírování není podporováno");}
+ showToast("Text hlášení byl zkopírován do vaší schránky. Nyní jej můžete vložit do e-mailu pro vaši banku.");
+ }catch(e){showToast("Automatické kopírování se nepodařilo. Označte a zkopírujte zobrazený text ručně.");}
+});
+document.getElementById("clear-report").addEventListener("click",()=>{phoneInput.value="";institutionInput.value="";timeInput.value="";updatePreview();showToast("Formulář byl vymazán.");});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
